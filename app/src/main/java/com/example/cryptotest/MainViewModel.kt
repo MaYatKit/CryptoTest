@@ -7,6 +7,7 @@ import com.example.cryptotest.data.model.Balance
 import com.example.cryptotest.data.model.Currency
 import com.example.cryptotest.data.model.ExchangeRate
 import com.example.cryptotest.data.repository.WalletRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -25,7 +26,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val walletBalance: StateFlow<List<Balance>> = _walletBalance
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             _currencies.value = repository.getCurrencies()
             _exchangeRates.value = repository.getExchangeRates()
             _walletBalance.value = repository.getWalletBalances()

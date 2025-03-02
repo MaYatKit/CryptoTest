@@ -7,10 +7,10 @@ import com.example.cryptotest.data.model.Balance
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-class WalletRepository constructor(private val context: Context) {
+class WalletRepository(private val context: Context) {
 
 
-    suspend fun getCurrencies(): List<Currency> {
+    fun getCurrencies(): List<Currency> {
         val json = loadJsonFromAssets("currencies.json")
         val currencyListType = object : TypeToken<List<Currency>>() {}.type
         val gson = Gson()
@@ -19,7 +19,7 @@ class WalletRepository constructor(private val context: Context) {
         return currencies
     }
 
-    suspend fun getExchangeRates(): List<ExchangeRate> {
+    fun getExchangeRates(): List<ExchangeRate> {
         val json = loadJsonFromAssets("live-rates.json")
         val exchangeRateListType = object : TypeToken<List<ExchangeRate>>() {}.type
         val gson = Gson()
@@ -28,7 +28,7 @@ class WalletRepository constructor(private val context: Context) {
         return exchangeRates
     }
 
-    suspend fun getWalletBalances(): List<Balance> {
+    fun getWalletBalances(): List<Balance> {
         val json = loadJsonFromAssets("wallet-balance.json")
         val balanceListType = object : TypeToken<List<Balance>>() {}.type
         val gson = Gson()

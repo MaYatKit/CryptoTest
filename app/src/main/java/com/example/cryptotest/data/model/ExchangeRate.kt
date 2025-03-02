@@ -1,14 +1,16 @@
 package com.example.cryptotest.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class ExchangeRate(
-    val fromCurrency: String,
-    val toCurrency: String,
-    val rates: List<Rate>,
-    val timeStamp: Long
+    @SerializedName("from_currency") val fromCurrency: String,
+    @SerializedName("to_currency") val toCurrency: String,
+    @SerializedName("rates") val rates: List<Rate>,
+    @SerializedName("time_stamp") val timeStamp: Long
 )
 
 
 data class Rate(
-    val amount: String,
-    val rate: String
+    @SerializedName("amount") val amount: String,
+    @SerializedName("rate") val rate: String
 )
