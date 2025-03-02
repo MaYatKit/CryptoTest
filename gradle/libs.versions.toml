@@ -10,6 +10,7 @@ activityCompose = "1.6.1"
 composeBom = "2023.01.00"
 coroutines = "1.6.4"
 retrofit = "2.9.0"
+glide = "1.0.0-beta01"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -32,6 +33,9 @@ coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-androi
 # Retrofit
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+
+# Glide Compose
+glide-compose = { module = "com.github.bumptech.glide:compose", version.ref = "glide" }
 
 
 [plugins]

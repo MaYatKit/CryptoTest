@@ -74,4 +74,7 @@ dependencies {
     // Coroutines
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
+
+    // Glide
+    implementation(libs.glide.compose)
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CryptoTest</string>
+    <string name="icon_of_currency">Icon of currency</string>
 </resources>
